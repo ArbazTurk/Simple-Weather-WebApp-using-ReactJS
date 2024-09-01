@@ -13,7 +13,7 @@ function App() {
       .then((res) => res.json())
       .then((finalRes) => {
         console.log(finalRes);
-        if (finalRes.cod == "404") {
+        if (finalRes.cod === "404") {
           setWDetails();
         } else {
           setWDetails(finalRes);
@@ -50,6 +50,7 @@ function App() {
           src="https://i.stack.imgur.com/kOnzy.gif"
           width={50}
           className={` absolute left-[38%] top-3 ${loading ? "" : "hidden"}`}
+          alt="Weather"
         />
         {wDetails ? (
           <>
@@ -65,6 +66,7 @@ function App() {
             <img
               src={`https://openweathermap.org/img/w/${wDetails.weather[0].icon}.png`}
               className="w-24 h-24 mx-auto"
+              alt="Weather"
             />
           </>
         ) : (
